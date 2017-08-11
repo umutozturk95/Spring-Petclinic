@@ -74,7 +74,7 @@ services:
      - discovery-server
     entrypoint: ["./wait-for-it.sh","discovery-server:8761","--timeout=60","--","java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
     ports:
-     - 8080:8080
+     - 8089:8089
 
   tracing-server:
     image: mszarlinski/spring-petclinic-tracing-server
@@ -88,8 +88,8 @@ services:
     entrypoint: ["./wait-for-it.sh","discovery-server:8761","--timeout=60","--","java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
     ports:
      - 9411:9411
-
-  admin-server:
+ 
+ admin-server:
     image: mszarlinski/spring-petclinic-admin-server
     container_name: admin-server
     links:
@@ -100,4 +100,4 @@ services:
      - discovery-server
     entrypoint: ["./wait-for-it.sh","discovery-server:8761","--timeout=60","--","java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
     ports:
-     - 9090:9090
+     - 9091:9091

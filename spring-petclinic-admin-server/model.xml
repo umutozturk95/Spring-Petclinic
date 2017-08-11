@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel>
+		<properties/>
+		<struct>
+			<and mandatory="true" name=" Pet CLinic">
+				<alt mandatory="true" name="Person">
+					<or name="Client">
+						<feature name="Customer"/>
+						<feature name="Visitor"/>
+					</or>
+					<feature name="Veterinarian"/>
+				</alt>
+				<alt mandatory="true" name="Pet">
+					<feature name="Dog"/>
+					<feature name="Cat"/>
+					<feature name="Bird"/>
+				</alt>
+				<and name="User Operation">
+					<feature name="Update Pet || Client"/>
+					<feature name="Add Pet || Client"/>
+					<feature name="View Pet||Owner Informations"/>
+					<feature name="Search"/>
+				</and>
+				<and mandatory="true" name="Development Environment">
+					<alt mandatory="true" name="DBMS">
+						<feature name="Mysql"/>
+						<feature name="HSQLDB"/>
+						<feature name="PostgreSQL"/>
+					</alt>
+					<alt mandatory="true" name="Server">
+						<feature name="Apache Tomcat"/>
+						<feature name="Jetty"/>
+					</alt>
+					<feature mandatory="true" name=" Java 8"/>
+					<and name="Logging">
+						<feature name="Log4j"/>
+						<feature name="Apache Logging"/>
+					</and>
+				</and>
+			</and>
+		</struct>
+		<constraints/>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>
