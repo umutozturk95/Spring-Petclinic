@@ -89,7 +89,7 @@ services:
     ports:
      - 9411:9411
 
-admin-server:
+  admin-server:
     image: mszarlinski/spring-petclinic-admin-server
     container_name: admin-server
     links:
